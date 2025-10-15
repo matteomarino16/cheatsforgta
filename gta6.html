@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA 6 - Coming Soon</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Stili specifici per GTA 6 */
+        .gta6-hero {
+            height: 100vh;
+            background-image: url('gta6sfondo.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            filter: blur(3px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .gta6-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        
+        .gta6-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .coming-soon {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.6);
+            animation: glow 2s ease-in-out infinite alternate;
+            margin: 0;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.6);
+            }
+            to {
+                text-shadow: 0 0 50px rgba(255, 255, 255, 1), 0 0 80px rgba(255, 255, 255, 0.8);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .coming-soon {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .coming-soon {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">CHEATS FOR GTA</h1>
+            <nav class="nav">
+                <a href="index.html" class="home-btn">Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gta6-hero">
+        <div class="gta6-hero-content">
+            <h1 class="coming-soon">Coming Soon</h1>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Cheats for GTA. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

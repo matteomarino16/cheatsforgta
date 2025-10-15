@@ -1,0 +1,586 @@
+/* Reset e stili base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background-color: #000000;
+    padding: 20px 0;
+    border-bottom: 2px solid #333;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1);
+    letter-spacing: 3px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Navigation Styles */
+.home-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-family: 'Orbitron', monospace;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    border: 2px solid transparent;
+}
+
+.home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('sfondohero.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    min-height: 70vh;
+}
+
+.hero-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.game-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.game-item {
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.game-logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: filter 0.3s ease;
+}
+
+.game-item:hover .game-logo {
+    filter: brightness(1.2) drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+.game-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.game-item a h3 {
+    color: white;
+    font-family: 'Orbitron', monospace;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.game-item:hover a h3 {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.game-item h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #000000;
+    padding: 30px 0;
+    border-top: 2px solid #333;
+    margin-top: auto;
+}
+
+.footer p {
+    text-align: center;
+    color: #cccccc;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .logo {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    
+    .home-btn {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .game-logos {
+        gap: 30px;
+        flex-direction: column;
+    }
+    
+    .game-logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .game-item h3 {
+        font-size: 1.2rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .game-logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .game-item {
+        padding: 15px;
+    }
+}
+
+/* GTA5 Page Styles */
+.gta5-hero {
+    background: #000000 url('gta5sfondo.png') center/cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+}
+
+.gta5-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.gta5-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.platform-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.platform-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    backdrop-filter: blur(10px);
+    width: 120px;
+    height: 120px;
+    justify-content: center;
+}
+
+.platform-icon:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.icon-symbol {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.platform-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.icon-label {
+    font-family: 'Orbitron', monospace;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.playstation-icon:hover .icon-symbol,
+.playstation-icon:hover .platform-logo {
+    filter: drop-shadow(0 0 20px #0070f3);
+}
+
+.xbox-icon:hover .icon-symbol,
+.xbox-icon:hover .platform-logo {
+    filter: drop-shadow(0 0 20px #107c10);
+}
+
+.pc-icon:hover .icon-symbol {
+    filter: drop-shadow(0 0 20px #ff6b6b);
+}
+
+/* Platform Sections */
+.platform-section {
+    padding: 80px 0;
+    background: #000000;
+}
+
+.platform-section:nth-child(even) {
+    background: #000000;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 50px;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.playstation-section .section-title {
+    background: linear-gradient(45deg, #0070f3, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.xbox-section .section-title {
+    background: linear-gradient(45deg, #107c10, #7ed321);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pc-section .section-title {
+    background: linear-gradient(45deg, #ff6b6b, #ffa726);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.switch-section .section-title {
+    background: linear-gradient(135deg, #e60012, #0066cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.android-section .section-title {
+    background: linear-gradient(135deg, #3ddc84, #a4c639);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.apple-section .section-title {
+    background: linear-gradient(135deg, #007aff, #5856d6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}.category-title {
+    color: #ffa726;
+    font-size: 1.8rem;
+    font-family: 'Orbitron', monospace;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 40px 0 20px 0;
+    text-align: center;
+    border-bottom: 2px solid rgba(255, 167, 38, 0.3);
+    padding-bottom: 10px;
+}
+
+.table-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.cheats-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Orbitron', monospace;
+}
+
+.cheats-table thead {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.cheats-table th {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 20px 15px;
+    text-align: left;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.cheats-table td {
+    color: #cccccc;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    vertical-align: top;
+}
+
+.cheats-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transition: background 0.3s ease;
+}
+
+.cheats-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.cheat-code {
+    background: rgba(0, 0, 0, 0.3);
+    color: #00ff88;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    border-left: 4px solid #00ff88;
+    word-break: break-word;
+}
+
+.cheat-description {
+    color: #cccccc;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Responsive for GTA5 page */
+@media (max-width: 768px) {
+    .platform-icons {
+        flex-direction: row;
+        gap: 25px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .platform-icon {
+        padding: 15px;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .icon-symbol {
+        font-size: 2rem;
+    }
+    
+    .platform-logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .icon-label {
+        font-size: 0.7rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .table-container {
+        margin: 0 10px;
+        border-radius: 10px;
+    }
+    
+    .cheats-table th,
+    .cheats-table td {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .cheats-table th {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gta5-hero {
+        padding: 60px 0;
+    }
+    
+    .platform-icons {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .platform-icon {
+        padding: 12px;
+        width: 90px;
+        height: 90px;
+    }
+    
+    .icon-symbol {
+        font-size: 1.8rem;
+    }
+    
+    .platform-logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .icon-label {
+        font-size: 0.6rem;
+    }
+    
+    .icon-label {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .table-container {
+        margin: 0 5px;
+    }
+    
+    .cheats-table th,
+    .cheats-table td {
+        padding: 10px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .cheats-table th {
+        font-size: 0.9rem;
+    }
+    
+    .platform-section {
+        padding: 60px 0;
+    }
+}
